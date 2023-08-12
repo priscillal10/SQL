@@ -1,0 +1,34 @@
+--Create a baby store database
+
+CREATE TABLE baby (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, sold INTEGER);
+
+INSERT INTO baby VALUES (1, "diapers", 35, 15, 10);
+INSERT INTO baby VALUES (2, "baby wipes", 40, 10, 10);
+INSERT INTO baby VALUES (3, "stroller", 3, 300, 2);
+INSERT INTO baby VALUES (4, "blankets", 10, 15, 5);
+INSERT INTO baby VALUES (5, "pacifier", 20, 10, 5);
+INSERT INTO baby VALUES (6, "bottles", 20, 50, 5);
+INSERT INTO baby VALUES (7, "car seat", 10, 150, 3);
+INSERT INTO baby VALUES (8, "baby cam", 10, 100, 1);
+INSERT INTO baby VALUES (9, "teethers", 10, 10, 3);
+INSERT INTO baby VALUES (10, "changing pad", 10, 20, 5);
+INSERT INTO baby VALUES(11, "diaper bag", 10, 50, 5);
+INSERT INTO baby VALUES (12, "Crib", 5, 300, 1);
+INSERT INTO baby VALUES (13, "waste bag", 20, 5, 5);
+INSERT INTO baby VALUES (14, "bottle warmer", 10, 70, 4);
+INSERT INTO baby VALUES (15, "swaddle", 15, 15, 8);
+
+--Display database in order from least to most expensive item
+SELECT * FROM baby ORDER BY price asc;
+
+-- Display database in order from least to most sold item
+SELECT * FROM baby ORDER BY sold asc;
+
+-- how many items were sold?
+SELECT SUM (sold) FROM baby;
+
+--how much was made in sales?
+SELECT SUM (price*sold) FROM baby;
+
+--which items sold 5 or more units in ascending order?
+SELECT * FROM baby WHERE sold >= 5 ORDER BY sold asc;
